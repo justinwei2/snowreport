@@ -1,0 +1,84 @@
+# Locate + calibrate catalog resorts, one parallel job per resort (own runner each), then merge
+# and commit data/ + CALIBRATION.md. Sleeps through Open-Meteo rate limits; each job stops
+# before GitHub's 6 h limit and its progress is still merged. Nightly run is a no-op once done.
+name: backfill
+on:
+  workflow_dispatch:
+    inputs:
+      force: { description: "Recalibrate every resort", type: boolean, default: false }
+      resorts: { description: "Resort keys, space-separated (e.g. alta snowbird); empty = every resort still to set up", type: string, default: "" }
+  schedule:
+    - cron: "41 9 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: backfill-${{ inputs.resorts || 'all' }}   # runs for different resorts go in parallel; separate from refresh
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - id: plan   # resorts still to set up ([] when all done: no resort jobs)
+        run: echo "matrix=$(python calibrate.py --plan ${{ inputs.resorts }} ${{ inputs.force && '--force' || '' }} | tail -1)" >> "$GITHUB_OUTPUT"
+
+  resort:
+    needs: plan
+    if: needs.plan.outputs.matrix != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      max-parallel: 10
+      matrix:
+        resort: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Locate + calibrate ${{ matrix.resort }}
+        env:
+          SNOWREPORT_CONTACT: ${{ secrets.SNOWREPORT_CONTACT }}
+        run: timeout 320m python -u calibrate.py ${{ matrix.resort }} --out out ${{ inputs.force && '--force' || '' }} || echo "stopped early; progress kept, next run continues"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bf-${{ matrix.resort }}
+          path: out/
+          if-no-files-found: ignore
+          retention-days: 3
+
+  merge:
+    needs: [plan, resort]
+    if: always() && needs.plan.outputs.matrix != '[]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        continue-on-error: true
+        with:
+          pattern: bf-*
+          path: parts
+      # merge onto the latest main each attempt (other pushes land while resorts run); fail loudly
+      - name: Merge and commit
+        run: |
+          git config user.name "Justin Wei"
+          git config user.email "justinwei2@gmail.com"
+          for i in 1 2 3; do
+            git fetch -q origin main && git reset -q --hard origin/main
+            python calibrate.py --merge parts
+            git add data CALIBRATION.md
+            git diff --cached --quiet && exit 0
+            git commit -qm "backfill: locate/calibrate $(date -u +%Y-%m-%dT%H:%MZ)" && git push -q origin HEAD:main && exit 0
+            sleep $((i * 15))
+          done
+          echo "::error::could not push the merged calibration"; exit 1

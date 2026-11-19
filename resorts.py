@@ -1,0 +1,206 @@
+"""Resort catalog, constants, and the typed records loaded from data/*.json.
+
+CATALOG holds rough coordinates; calibrate.py snaps them to Open-Meteo's 90 m DEM (the published
+lift elevation is kept, since the DEM smooths peaks), picks a gauge and the models with data
+there, and writes data/resorts.json + data/calibration.json.
+"""
+import json, os
+from dataclasses import asdict, dataclass, field, fields
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA = os.path.join(HERE, "data")
+FT, IN, KMH_MPH = 0.3048, 25.4, 0.621371
+ELEVS = ("base", "mid", "summit")
+
+# Deterministic models blended for the central forecast; each resort keeps those with data there.
+BASE_MODELS = ["ecmwf_ifs", "ecmwf_ifs025", "ecmwf_aifs025_single", "gfs_seamless",
+               "ncep_nbm_conus", "gem_seamless", "icon_seamless", "jma_seamless"]
+PROFILE_MODELS = ["ecmwf_ifs025", "gfs_seamless", "gem_seamless", "icon_seamless"]  # pressure levels
+LEVELS = [1000, 925, 850, 800, 750, 700, 650, 600, 550, 500]
+# Ensemble -> deterministic sibling whose calibration factor applies to its members.
+ENSEMBLES = {"ecmwf_ifs025": "ecmwf_ifs025", "ecmwf_aifs025": "ecmwf_aifs025_single",
+             "gfs05": "gfs_seamless", "gem_global": "gem_seamless", "icon_seamless": "icon_seamless"}
+SEASONS = [("2024-11-01", "2025-04-30"), ("2025-11-01", "2026-04-30")]  # calibration winters
+EXT_LEAD_DAYS = 3.5  # forecasts further out than this use the lead 4-7 day weights
+# NWS asks for a contact in the User-Agent; set SNOWREPORT_CONTACT (e.g. an email) when hosted.
+USER_AGENT = f"snowreport ({os.environ.get('SNOWREPORT_CONTACT', 'local use')})"
+COUNTRIES = {"US": "United States", "CA": "Canada", "JP": "Japan"}  # display order for lists grouped by country
+
+
+def by_country(keys):
+    """Catalog keys grouped by country (COUNTRIES order), alphabetical within: [(country, [keys])]."""
+    return [(c, sorted((k for k in keys if CATALOG[k][1] == c), key=lambda k: CATALOG[k][0])) for c in COUNTRIES]
+
+
+PT, MT, JST = "America/Los_Angeles", "America/Denver", "Asia/Tokyo"
+VAN, EDM = "America/Vancouver", "America/Edmonton"
+# key: (name, country, tz, (base lat, lon, ft, label), (summit lat, lon, ft, label)[, (mid ft, label)]);
+# rough coordinates. The optional mid names a real mid-mountain spot (main gondola top or mid lodge) at its
+# published elevation; without it, mid is the point 55% of the way up.
+# Country picks the gauge network (US: SNOTEL/CDEC, CA: BC snow pillows, JP: hand-picked JMA stations)
+# and NWS products (US only).
+CATALOG = {
+    "palisades": ("Palisades Tahoe", "US", PT, (39.1969, -120.2354, 6200, "Village"), (39.1983, -120.2871, 9050, "Peak")),
+    "alpine": ("Alpine Meadows", "US", PT, (39.1645, -120.2386, 6835, "Base lodge"), (39.1489, -120.2476, 8637, "Ward Peak")),
+    "kirkwood": ("Kirkwood", "US", PT, (38.6847, -120.0654, 7800, "Base"), (38.6650, -120.0610, 9800, "Top")),
+    "mammoth": ("Mammoth Mountain", "US", PT, (37.6510, -119.0270, 8900, "Main Lodge"), (37.6306, -119.0326, 11053, "Summit")),
+    "bachelor": ("Mt. Bachelor", "US", PT, (43.9922, -121.6786, 6300, "West Village"), (43.9794, -121.6885, 9068, "Summit"), (7775, "Pine Marten")),
+    "alta": ("Alta", "US", MT, (40.5885, -111.6380, 8530, "Wildcat base"), (40.5680, -111.6261, 10550, "Upper mountain")),
+    "snowbird": ("Snowbird", "US", MT, (40.5812, -111.6555, 7760, "Base"), (40.5485, -111.6534, 11000, "Hidden Peak")),
+    "solitude": ("Solitude", "US", MT, (40.6197, -111.5917, 7994, "Base"), (40.5930, -111.5592, 10488, "Summit")),
+    "snowbasin": ("Snowbasin", "US", MT, (41.2163, -111.8570, 6391, "Base"), (41.2030, -111.8840, 9350, "Needles")),
+    "jackson": ("Jackson Hole", "US", MT, (43.5877, -110.8279, 6311, "Teton Village"), (43.5972, -110.8706, 10450, "Rendezvous Peak")),
+    "bigsky": ("Big Sky", "US", MT, (45.2857, -111.4012, 7500, "Mountain Village"), (45.2781, -111.4503, 11166, "Lone Peak")),
+    "abasin": ("Arapahoe Basin", "US", MT, (39.6420, -105.8715, 10780, "Base"), (39.6300, -105.8533, 13050, "Summit")),
+    "copper": ("Copper Mountain", "US", MT, (39.5018, -106.1511, 9712, "Base"), (39.4690, -106.1582, 12313, "Tucker Mtn")),
+    "steamboat": ("Steamboat", "US", MT, (40.4572, -106.8045, 6900, "Base"), (40.4561, -106.7403, 10568, "Mt. Werner"), (9080, "Thunderhead")),
+    "telluride": ("Telluride", "US", MT, (37.9370, -107.8466, 9545, "Mountain Village"), (37.8837, -107.8293, 13150, "Summit")),
+    "taos": ("Taos Ski Valley", "US", MT, (36.5960, -105.4545, 9350, "Base"), (36.5685, -105.4198, 12481, "Kachina Peak")),
+    "crestedbutte": ("Crested Butte", "US", MT, (38.8991, -106.9650, 9375, "Base"), (38.8817, -106.9440, 12162, "North Face / High Lift")),
+    "whistler": ("Whistler", "CA", VAN, (50.1150, -122.9548, 2214, "Village"), (50.0592, -122.9569, 7160, "Whistler Peak"), (6069, "Roundhouse")),
+    "blackcomb": ("Blackcomb", "CA", VAN, (50.1155, -122.9480, 2214, "Village"), (50.0890, -122.8786, 8019, "Blackcomb summit"), (6102, "Rendezvous")),
+    "revelstoke": ("Revelstoke", "CA", VAN, (50.9580, -118.1636, 1680, "Base"), (50.9636, -118.0892, 7300, "Summit")),
+    "kickinghorse": ("Kicking Horse", "CA", EDM, (51.2975, -117.0480, 3900, "Base"), (51.2830, -117.0968, 8218, "Top of Kicking Horse")),
+    "redmountain": ("Red Mountain", "CA", VAN, (49.1035, -117.8195, 3888, "Base"), (49.1290, -117.8562, 6807, "Granite Mountain")),
+    "lakelouise": ("Lake Louise", "CA", EDM, (51.4420, -116.1620, 5400, "Base"), (51.4678, -116.1417, 8650, "Top of the World"), (6700, "Whitehorn Lodge")),
+    "hakuba": ("Hakuba Happo-One", "JP", JST, (36.6980, 137.8420, 2493, "Happo base"), (36.6900, 137.7920, 6007, "Grat top"), (4593, "Usagidaira")),
+    "niseko": ("Niseko Grand Hirafu", "JP", JST, (42.8595, 140.7020, 984, "Hirafu base"), (42.8720, 140.6618, 3937, "Peak lift top")),
+}
+# Hand-verified mid points and gauges for the original four (kept as-is by locate), and gauges for
+# places without a searchable station catalog (Alberta: id "station:precip-TSID"; JMA: "type:prec_no:block_no").
+MANUAL = {
+    "palisades": dict(mid=(39.1899, -120.2658, 8000, "High Camp"),
+                      gauge=("snotel", "784:CA:SNTL", "Palisades Tahoe SNOTEL (High Camp area)", 8010, 39.18986, -120.26576)),
+    "alpine": dict(mid=(39.1567, -120.2431, 7500, "Mid-mountain"),
+                   gauge=("snotel", "848:CA:SNTL", "Ward Creek #3 SNOTEL", 6750, 39.13545, -120.21865)),
+    "kirkwood": dict(mid=(38.6750, -120.0630, 8300, "Mid-mountain"),
+                     gauge=("snotel", "1067:CA:SNTL", "Carson Pass SNOTEL", 8360, 38.6927, -120.0022)),
+    "mammoth": dict(mid=(37.6385, -119.0215, 9600, "McCoy Station"),
+                    gauge=("cdec", "MHP", "Mammoth Pass (CDEC)", 9400, 37.61, -119.033), afd_office="REV"),
+    "lakelouise": dict(gauge=("abrivers", "05BA815:158817042", "Pika Run (Alberta Rivers)", 7382, 51.462944, -116.117833)),
+    "hakuba": dict(gauge=("amedas", "a:48:0396", "Hakuba (JMA AMeDAS)", 2306, 36.6983, 137.8617)),
+    "niseko": dict(gauge=("amedas", "s:16:47433", "Kutchan (JMA)", 578, 42.9, 140.7567)),
+}
+
+
+@dataclass
+class Point:
+    lat: float
+    lon: float
+    ft: int
+    label: str
+
+
+@dataclass
+class Gauge:
+    kind: str  # "snotel" | "cdec" | "bcasws" | "abrivers" | "amedas"
+    id: str
+    name: str
+    ft: int
+    lat: float
+    lon: float
+
+
+@dataclass
+class Resort:
+    key: str
+    name: str
+    country: str  # "US" | "CA"
+    tz: str
+    base: Point
+    mid: Point
+    summit: Point
+    gauge: Gauge | None
+    models: list
+    dem_ft: dict = field(default_factory=dict)
+    afd_office: str | None = None
+
+    @property
+    def us(self):
+        return self.country == "US"
+
+    def point(self, elev):
+        return getattr(self, elev)
+
+    @classmethod
+    def from_json(cls, key, d):
+        name, country = CATALOG[key][:2] if key in CATALOG else (d["name"], d["country"])  # catalog wins
+        return cls(key=key, name=name, country=country, tz=d["tz"],
+                   **{e: Point(**d[e]) for e in ELEVS}, gauge=Gauge(*d["obs"]) if d.get("obs") else None,
+                   models=d["models"], dem_ft=d.get("dem_ft", {}), afd_office=d.get("afd_office"))
+
+    def to_json(self):
+        d = dict(name=self.name, country=self.country, tz=self.tz, **{e: asdict(self.point(e)) for e in ELEVS},
+                 dem_ft=self.dem_ft, obs=list(asdict(self.gauge).values()) if self.gauge else None, models=self.models)
+        return d | ({"afd_office": self.afd_office} if self.afd_office else {})
+
+
+@dataclass
+class ModelCal:
+    factor: float
+    weight: float                    # blend weight for lead days 1-3
+    mae72: float | None = None
+    raw_mae72: float | None = None
+    n: int = 0
+    weight_ext: float | None = None  # blend weight for lead days 4+ (0: model doesn't reach that far)
+    mae_ext: float | None = None     # daily MAE (mm) at lead days 4-7, after the bias factor
+
+
+@dataclass
+class Calibration:
+    """Per-resort precipitation bias factors, blend weights and historical error quantiles."""
+    models: dict  # model -> ModelCal
+    station: str | None = None
+    uncalibrated: bool | None = None  # True: raw models, equal weights (no gauge or not calibrated yet)
+    blend_mae72: float | None = None
+    n_windows: int | None = None
+    n_wet: int = 0
+    ratio_q: dict = field(default_factory=dict)  # "0.1".."0.9" -> obs/forecast ratio
+    ratio_bins: list = field(default_factory=list)  # [{lo_mm, hi_mm, n, q}] by forecast storm size
+    temp_bias_c: float | None = None      # station minus model daily mean temperature, all days
+    temp_bias_wet_c: float | None = None  # same on storm days: shifts the profile (phase, snow level, ratio)
+    temp_n_wet: int = 0
+    temp_mae_c: list | None = None        # [raw, corrected] daily-mean temperature MAE at the gauge
+    raw_reason: str | None = None         # deliberately not calibrated (gauge not representative): why
+
+    @property
+    def calibrated(self):
+        return not self.uncalibrated
+
+    def weight(self, model, lead_days):
+        m = self.models[model]
+        return m.weight_ext if lead_days > EXT_LEAD_DAYS and m.weight_ext is not None else m.weight
+
+    @property
+    def profile_shift_c(self):
+        """Temperature correction applied to the model profile, capped (station siting adds its own bias)."""
+        return max(-1.5, min(1.5, self.temp_bias_wet_c)) if self.temp_bias_wet_c is not None else 0.0
+
+    def error_quantiles(self, liq72_mm, qs):
+        """obs/forecast ratio quantiles for a 72 h storm of this size (falls back to all storms)."""
+        rq = next((b["q"] for b in self.ratio_bins if b["lo_mm"] <= liq72_mm < b["hi_mm"]), self.ratio_q)
+        return {q: rq.get(str(q), 1.0) for q in qs}
+
+    @classmethod
+    def from_json(cls, d):
+        known = lambda c, x: {k: v for k, v in x.items() if k in {f.name for f in fields(c)}}
+        return cls(**known(cls, d) | {"models": {m: ModelCal(**known(ModelCal, v)) for m, v in d["models"].items()}})
+
+    def to_json(self):
+        return {k: v for k, v in asdict(self).items() if v is not None}
+
+
+def _load(name):
+    p = os.path.join(DATA, name)
+    return json.load(open(p)) if os.path.exists(p) else {}
+
+
+def load_resorts():
+    return {k: Resort.from_json(k, v) for k, v in _load("resorts.json").items()}
+
+
+def load_calibration():
+    return {k: Calibration.from_json(v) for k, v in _load("calibration.json").items()}
+
+
+RESORTS = load_resorts()

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snow Report</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="viz-root">
+  <header class="top">
+    <div class="brand">Snow Report</div>
+    <nav class="tabs" aria-label="Pages">
+      <a href="./" class="on" aria-current="page">Forecast</a>
+      <a href="map.html">Map</a>
+      <a href="methodology.html">Methodology</a>
+    </nav>
+    <div class="search" id="search">
+      <input id="q" type="search" placeholder="Search resorts — Alta, Whistler, Niseko…" autocomplete="off"
+             role="combobox" aria-expanded="false" aria-controls="results" aria-label="Search resorts">
+      <ul id="results" class="results" role="listbox" hidden></ul>
+    </div>
+    <div class="top-right">
+      <span id="updated" class="muted"></span>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="title-row">
+      <div>
+        <h1 id="r-name"></h1>
+        <div id="r-depth" class="depth"></div>
+      </div>
+      <div class="seg" role="tablist" id="elev-toggle" aria-label="Elevation"></div>
+    </section>
+
+    <div id="loading" class="card loading" hidden>No forecast for this resort yet. Forecasts refresh every few hours; check back soon.</div>
+
+    <div id="content">
+      <section id="alerts"></section>
+
+      <section class="card">
+        <div class="card-head"><h2>Snow Summary</h2><span class="muted" id="summary-sub"></span></div>
+        <div id="summary" class="summary"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Hourly Forecast</h2><span class="muted" id="hourly-sub"></span></div>
+        <div class="table-wrap hourly-wrap" id="hourly-wrap"><table id="hourly-table" class="grid hourly"></table></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Daily Overview</h2><span class="muted" id="daily-sub"></span></div>
+        <div class="table-wrap vscroll" id="daily-wrap"><table id="daily-table" class="grid"></table></div>
+        <div class="legend" id="alert-legend"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head"><h2>Snow Level &amp; Freezing Level</h2><span class="muted">hourly</span></div>
+        <div id="level-chart" class="chart"></div>
+        <div class="legend" id="level-legend"></div>
+        <div class="card-head plume-head"><h2>Snow &amp; Rain (Hourly)</h2><span class="muted" id="plume-sub"></span></div>
+        <div id="plume" class="chart"></div>
+        <div class="legend" id="plume-legend"></div>
+      </section>
+
+      <section class="appendix">
+        <h2 class="app-h">Details</h2>
+        <details class="card"><summary><h2>Models</h2></summary>
+          <div class="table-wrap"><table id="models-table" class="grid models"></table></div>
+          <p class="fine" id="cal-note"></p>
+        </details>
+        <details class="card"><summary><h2>Station Observations</h2> <span class="muted" id="obs-station"></span></summary>
+          <div id="obs-tiles" class="tiles small"></div>
+          <div id="obs-chart" class="chart short"></div>
+          <div class="legend" id="obs-legend"></div>
+        </details>
+        <details class="card"><summary><h2>NWS Forecast Discussion</h2> <span class="muted" id="afd-meta"></span></summary>
+          <div id="afd" class="afd"></div>
+        </details>
+        <details class="card"><summary><h2>Middle 80% Range (10–90%)</h2></summary>
+          <div class="table-wrap"><table id="wide-table" class="grid"></table></div>
+          <p class="fine">Middle 80% = 10th–90th percentile: 1 in 10 chance of less, 1 in 10 of more. Models have historically under-forecast the biggest storms.</p>
+        </details>
+        <details class="card"><summary><h2>Forecast Points &amp; Calibration</h2></summary>
+          <div class="table-wrap"><table id="points-table" class="grid"></table></div>
+          <div class="table-wrap"><table id="cal-table" class="grid"></table></div>
+        </details>
+        <details class="card" id="calcov"><summary><h2>Calibration Coverage (All Resorts)</h2></summary>
+          <div class="table-wrap"><table id="calcov-table" class="grid"></table></div>
+          <p class="fine">Calibrated: model precipitation bias-corrected against the listed gauge using two winters of as-issued forecasts. Error is the blend's mean absolute error for 72 h liquid precipitation after correction. Pending: gauge found, calibration still running (raw models meanwhile). Raw models: no nearby automated gauge, so model precipitation is used as-is with equal weights.</p>
+        </details>
+        <a class="card method-link" href="methodology.html">Formulas &amp; Methodology: How Every Number Here Is Made →</a>
+      </section>
+    </div>
+    <footer class="foot">
+      Forecast data <a href="https://open-meteo.com/">Open-Meteo.com</a> (CC BY 4.0) from ECMWF, NOAA, ECCC, DWD and JMA models;
+      NWS alerts and forecast discussions (weather.gov); observations from NRCS SNOTEL, California CDEC, BC River Forecast Centre, Alberta Rivers and the Japan Meteorological Agency (AMeDAS).
+      Forecasts can be wrong. Check the resort's own report and avalanche forecast before heading out.
+      <a href="https://github.com/justinwei2/snowreport">Source</a>
+    </footer>
+  </main>
+  <div id="tip" class="tip" role="tooltip" hidden></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

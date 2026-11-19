@@ -1,0 +1,350 @@
+
+######## US / SNOTEL (precip gauge) ########
+
+--- palisades: grid elev used by Open-Meteo = 2443.0 m
+  best_match             L1 MAE=10.8 b=1.65 | L2 MAE= 8.7 b=1.19 | L3 MAE= 8.5 b=1.10 | L5 MAE= 6.6 b=0.52 || 72h n= 356 MAE= 17.0 bias=1.31 r=0.69 | ev= 74 POD=0.77 prec=0.69
+  gfs_seamless           L1 MAE=10.8 b=1.65 | L2 MAE= 8.7 b=1.19 | L3 MAE= 8.5 b=1.10 | L5 MAE= 6.6 b=0.52 || 72h n= 356 MAE= 17.0 bias=1.31 r=0.69 | ev= 74 POD=0.77 prec=0.69
+  ecmwf_ifs025           L1 MAE= 7.0 b=0.82 | L2 MAE= 7.3 b=0.83 | L3 MAE= 7.2 b=0.80 | L5 MAE= 6.6 b=0.65 || 72h n= 356 MAE= 12.3 bias=0.81 r=0.73 | ev= 74 POD=0.58 prec=0.81
+  ecmwf_ifs              L1 MAE= 7.9 b=0.98 | L2 MAE= 7.8 b=0.92 | L3 MAE= 7.2 b=0.87 | L5 MAE= 7.6 b=0.85 || 72h n= 155 MAE= 12.9 bias=0.96 r=0.76 | ev= 30 POD=0.63 prec=0.70
+  ecmwf_aifs025_single   L1 MAE= 6.7 b=0.89 | L2 MAE= 6.8 b=0.87 | L3 MAE= 6.8 b=0.90 | L5 MAE= 6.3 b=0.80 || 72h n= 247 MAE= 11.2 bias=0.89 r=0.76 | ev= 47 POD=0.60 prec=0.76
+  ncep_nbm_conus         L1 MAE=10.3 b=1.58 | L2 MAE= 8.9 b=1.27 | L3 MAE= 8.0 b=1.12 | L5 MAE= 7.5 b=1.15 || 72h n= 356 MAE= 16.4 bias=1.32 r=0.70 | ev= 74 POD=0.80 prec=0.69
+  icon_seamless          L1 MAE= 8.2 b=1.06 | L2 MAE= 8.5 b=1.12 | L3 MAE= 8.3 b=1.08 | L5 MAE= 6.9 b=0.95 || 72h n= 351 MAE= 13.5 bias=1.08 r=0.75 | ev= 70 POD=0.71 prec=0.71
+  gem_seamless           L1 MAE= 7.8 b=0.96 | L2 MAE= 8.4 b=1.09 | L3 MAE= 8.0 b=1.06 | L5 MAE= 7.5 b=0.93 || 72h n= 356 MAE= 12.7 bias=1.03 r=0.75 | ev= 74 POD=0.68 prec=0.78
+  gfs_hrrr               L1 MAE=10.8 b=1.65 | L2   -- | L3   -- | L5   -- || 72h     (no data)
+  ENSMEAN                L1 MAE= 8.5 b=1.22 | L2 MAE= 8.1 b=1.12 | L3 MAE= 7.8 b=1.03 | L5 MAE= 6.6 b=0.83 || 72h n= 351 MAE= 13.2 bias=1.12 r=0.75 | ev= 70 POD=0.73 prec=0.73
+
+--- kirkwood_carsonpass: grid elev used by Open-Meteo = 2554.0 m
+  best_match             L1 MAE= 8.0 b=1.78 | L2 MAE= 7.2 b=1.57 | L3 MAE= 7.0 b=1.50 | L5 MAE= 4.6 b=0.72 || 72h n= 356 MAE= 13.4 bias=1.62 r=0.71 | ev= 46 POD=0.74 prec=0.53
+  gfs_seamless           L1 MAE= 8.0 b=1.78 | L2 MAE= 7.2 b=1.57 | L3 MAE= 7.0 b=1.50 | L5 MAE= 4.6 b=0.72 || 72h n= 356 MAE= 13.4 bias=1.62 r=0.71 | ev= 46 POD=0.74 prec=0.53
+  ecmwf_ifs025           L1 MAE= 5.9 b=1.16 | L2 MAE= 6.0 b=1.22 | L3 MAE= 6.1 b=1.17 | L5 MAE= 5.3 b=0.96 || 72h n= 356 MAE=  9.4 bias=1.18 r=0.72 | ev= 46 POD=0.65 prec=0.61
+  ecmwf_ifs              L1 MAE= 5.8 b=1.21 | L2 MAE= 6.0 b=1.20 | L3 MAE= 5.6 b=1.23 | L5 MAE= 5.4 b=1.07 || 72h n= 155 MAE= 10.0 bias=1.26 r=0.80 | ev= 21 POD=0.76 prec=0.67
+  ecmwf_aifs025_single   L1 MAE= 5.1 b=1.20 | L2 MAE= 5.2 b=1.20 | L3 MAE= 5.2 b=1.22 | L5 MAE= 4.8 b=1.09 || 72h n= 247 MAE=  9.0 bias=1.20 r=0.77 | ev= 32 POD=0.66 prec=0.60
+  ncep_nbm_conus         L1 MAE= 8.4 b=1.98 | L2 MAE= 7.1 b=1.62 | L3 MAE= 6.3 b=1.45 | L5 MAE= 5.6 b=1.44 || 72h n= 356 MAE= 13.8 bias=1.67 r=0.71 | ev= 46 POD=0.72 prec=0.46
+  icon_seamless          L1 MAE= 6.0 b=1.29 | L2 MAE= 6.2 b=1.41 | L3 MAE= 6.3 b=1.32 | L5 MAE= 5.8 b=1.24 || 72h n= 351 MAE=  9.9 bias=1.33 r=0.74 | ev= 43 POD=0.72 prec=0.53
+  gem_seamless           L1 MAE= 5.3 b=0.99 | L2 MAE= 5.6 b=1.12 | L3 MAE= 6.3 b=1.39 | L5 MAE= 6.3 b=1.30 || 72h n= 356 MAE=  8.5 bias=1.17 r=0.77 | ev= 46 POD=0.63 prec=0.62
+  gfs_hrrr               L1 MAE= 8.0 b=1.78 | L2   -- | L3   -- | L5   -- || 72h     (no data)
+  ENSMEAN                L1 MAE= 6.4 b=1.47 | L2 MAE= 6.2 b=1.43 | L3 MAE= 6.2 b=1.37 | L5 MAE= 5.2 b=1.13 || 72h n= 351 MAE= 10.2 bias=1.42 r=0.76 | ev= 43 POD=0.72 prec=0.56
+
+--- snowbird: grid elev used by Open-Meteo = 2789.0 m
+  best_match             L1 MAE= 5.8 b=0.98 | L2 MAE= 5.4 b=0.74 | L3 MAE= 5.6 b=0.76 | L5 MAE= 4.6 b=0.35 || 72h n= 356 MAE=  9.6 bias=0.83 r=0.63 | ev= 43 POD=0.42 prec=0.49
+  gfs_seamless           L1 MAE= 5.8 b=0.98 | L2 MAE= 5.4 b=0.74 | L3 MAE= 5.6 b=0.76 | L5 MAE= 4.6 b=0.35 || 72h n= 356 MAE=  9.6 bias=0.83 r=0.63 | ev= 43 POD=0.42 prec=0.49
+  ecmwf_ifs025           L1 MAE= 4.8 b=0.41 | L2 MAE= 4.8 b=0.44 | L3 MAE= 4.8 b=0.42 | L5 MAE= 5.1 b=0.42 || 72h n= 356 MAE= 10.5 bias=0.42 r=0.61 | ev= 43 POD=0.02 prec=1.00
+  ecmwf_ifs              L1 MAE= 5.1 b=0.75 | L2 MAE= 4.6 b=0.73 | L3 MAE= 4.6 b=0.62 | L5 MAE= 5.5 b=0.79 || 72h n= 155 MAE=  9.2 bias=0.65 r=0.64 | ev= 17 POD=0.12 prec=0.50
+  ecmwf_aifs025_single   L1 MAE= 4.5 b=0.47 | L2 MAE= 4.5 b=0.50 | L3 MAE= 4.5 b=0.53 | L5 MAE= 4.8 b=0.58 || 72h n= 247 MAE=  9.3 bias=0.50 r=0.67 | ev= 30 POD=0.00 prec= nan
+  ncep_nbm_conus         L1 MAE= 6.3 b=1.23 | L2 MAE= 6.0 b=1.07 | L3 MAE= 5.9 b=0.99 | L5 MAE= 5.8 b=0.99 || 72h n= 356 MAE= 10.4 bias=1.11 r=0.63 | ev= 43 POD=0.56 prec=0.53
+  icon_seamless          L1 MAE= 5.3 b=0.72 | L2 MAE= 5.4 b=0.82 | L3 MAE= 5.4 b=0.83 | L5 MAE= 5.5 b=0.80 || 72h n= 351 MAE=  9.3 bias=0.79 r=0.64 | ev= 43 POD=0.28 prec=0.55
+  gem_seamless           L1 MAE= 5.8 b=1.12 | L2 MAE= 5.8 b=1.13 | L3 MAE= 4.7 b=0.69 | L5 MAE= 5.2 b=0.76 || 72h n= 356 MAE= 10.2 bias=0.98 r=0.67 | ev= 43 POD=0.53 prec=0.55
+  gfs_hrrr               L1 MAE= 5.8 b=0.98 | L2   -- | L3   -- | L5   -- || 72h     (no data)
+  ENSMEAN                L1 MAE= 5.3 b=0.89 | L2 MAE= 5.2 b=0.84 | L3 MAE= 5.1 b=0.74 | L5 MAE= 5.1 b=0.65 || 72h n= 351 MAE=  9.1 bias=0.82 r=0.68 | ev= 43 POD=0.35 prec=0.54
+
+--- alta_atwater: grid elev used by Open-Meteo = 2684.0 m
+  best_match             L1 MAE= 5.7 b=0.78 | L2 MAE= 5.8 b=0.67 | L3 MAE= 6.0 b=0.68 | L5 MAE= 5.2 b=0.31 || 72h n= 356 MAE= 10.1 bias=0.72 r=0.66 | ev= 55 POD=0.33 prec=0.60
+  gfs_seamless           L1 MAE= 5.7 b=0.78 | L2 MAE= 5.8 b=0.67 | L3 MAE= 6.0 b=0.68 | L5 MAE= 5.2 b=0.31 || 72h n= 356 MAE= 10.1 bias=0.72 r=0.66 | ev= 55 POD=0.33 prec=0.60
+  ecmwf_ifs025           L1 MAE= 5.2 b=0.37 | L2 MAE= 5.2 b=0.39 | L3 MAE= 5.3 b=0.38 | L5 MAE= 5.5 b=0.38 || 72h n= 356 MAE= 11.9 bias=0.38 r=0.61 | ev= 55 POD=0.02 prec=1.00
+  ecmwf_ifs              L1 MAE= 5.2 b=0.72 | L2 MAE= 5.0 b=0.70 | L3 MAE= 5.0 b=0.59 | L5 MAE= 5.5 b=0.76 || 72h n= 155 MAE= 10.2 bias=0.62 r=0.60 | ev= 20 POD=0.10 prec=0.50
+  ecmwf_aifs025_single   L1 MAE= 4.9 b=0.43 | L2 MAE= 4.9 b=0.46 | L3 MAE= 4.8 b=0.49 | L5 MAE= 5.1 b=0.53 || 72h n= 247 MAE= 10.2 bias=0.46 r=0.68 | ev= 35 POD=0.00 prec= nan
+  ncep_nbm_conus         L1 MAE= 6.5 b=1.11 | L2 MAE= 6.2 b=0.97 | L3 MAE= 6.3 b=0.90 | L5 MAE= 6.2 b=0.89 || 72h n= 356 MAE= 10.8 bias=1.00 r=0.64 | ev= 55 POD=0.47 prec=0.58
+  icon_seamless          L1 MAE= 5.5 b=0.65 | L2 MAE= 5.7 b=0.74 | L3 MAE= 5.7 b=0.75 | L5 MAE= 5.8 b=0.72 || 72h n= 351 MAE=  9.8 bias=0.71 r=0.67 | ev= 55 POD=0.29 prec=0.73
+  gem_seamless           L1 MAE= 5.9 b=0.93 | L2 MAE= 5.8 b=0.92 | L3 MAE= 5.3 b=0.66 | L5 MAE= 5.9 b=0.73 || 72h n= 356 MAE= 10.7 bias=0.84 r=0.65 | ev= 55 POD=0.36 prec=0.54
+  gfs_hrrr               L1 MAE= 5.7 b=0.78 | L2   -- | L3   -- | L5   -- || 72h     (no data)
+  ENSMEAN                L1 MAE= 5.5 b=0.77 | L2 MAE= 5.6 b=0.74 | L3 MAE= 5.5 b=0.67 | L5 MAE= 5.6 b=0.60 || 72h n= 351 MAE=  9.9 bias=0.73 r=0.69 | ev= 55 POD=0.25 prec=0.56
+
+--- jackson_phillips: grid elev used by Open-Meteo = 2503.0 m
+  best_match             L1 MAE= 4.6 b=1.07 | L2 MAE= 4.2 b=0.96 | L3 MAE= 4.0 b=0.96 | L5 MAE= 3.5 b=0.39 || 72h n= 356 MAE=  7.3 bias=0.99 r=0.71 | ev= 23 POD=0.57 prec=0.52
+  gfs_seamless           L1 MAE= 4.6 b=1.07 | L2 MAE= 4.2 b=0.96 | L3 MAE= 4.0 b=0.96 | L5 MAE= 3.5 b=0.39 || 72h n= 356 MAE=  7.3 bias=0.99 r=0.71 | ev= 23 POD=0.57 prec=0.52
+  ecmwf_ifs025           L1 MAE= 3.7 b=0.80 | L2 MAE= 3.8 b=0.81 | L3 MAE= 3.8 b=0.79 | L5 MAE= 3.8 b=0.75 || 72h n= 356 MAE=  6.5 bias=0.80 r=0.69 | ev= 23 POD=0.13 prec=0.75
+  ecmwf_ifs              L1 MAE= 3.5 b=0.81 | L2 MAE= 3.6 b=0.81 | L3 MAE= 3.9 b=0.79 | L5 MAE= 3.6 b=0.78 || 72h n= 155 MAE=  7.0 bias=0.79 r=0.66 | ev= 10 POD=0.20 prec=0.67
+  ecmwf_aifs025_single   L1 MAE= 3.5 b=0.81 | L2 MAE= 3.4 b=0.81 | L3 MAE= 3.5 b=0.83 | L5 MAE= 3.6 b=0.85 || 72h n= 247 MAE=  6.0 bias=0.82 r=0.72 | ev= 15 POD=0.07 prec=0.33
+  ncep_nbm_conus         L1 MAE= 4.2 b=1.08 | L2 MAE= 4.0 b=1.01 | L3 MAE= 3.8 b=0.90 | L5 MAE= 3.9 b=0.91 || 72h n= 356 MAE=  7.1 bias=1.00 r=0.70 | ev= 23 POD=0.48 prec=0.55
+  icon_seamless          L1 MAE= 4.0 b=0.80 | L2 MAE= 3.9 b=0.78 | L3 MAE= 4.0 b=0.80 | L5 MAE= 4.0 b=0.77 || 72h n= 351 MAE=  7.4 bias=0.79 r=0.64 | ev= 23 POD=0.26 prec=0.46
+  gem_seamless           L1 MAE= 4.2 b=0.95 | L2 MAE= 3.6 b=0.77 | L3 MAE= 3.9 b=0.72 | L5 MAE= 4.0 b=0.79 || 72h n= 356 MAE=  7.1 bias=0.82 r=0.68 | ev= 23 POD=0.30 prec=0.64
+  gfs_hrrr               L1 MAE= 4.6 b=1.07 | L2   -- | L3   -- | L5   -- || 72h     (no data)
+  ENSMEAN                L1 MAE= 4.1 b=0.94 | L2 MAE= 3.8 b=0.87 | L3 MAE= 3.7 b=0.84 | L5 MAE= 3.6 b=0.72 || 72h n= 351 MAE=  6.5 bias=0.88 r=0.73 | ev= 23 POD=0.30 prec=0.58
+
+=== POOLED over sites, season 2024-25 (mm SWE; events 24h>=12.7, 72h>=38.0) ===
+ [24h_L1]
+   ecmwf_aifs025_single   n= 355 MAE=  4.7 bias=0.80 r=0.29 | ev= 42 POD=0.14 prec=0.23
+   ecmwf_ifs025           n= 900 MAE=  5.7 bias=0.71 r=0.25 | ev=137 POD=0.14 prec=0.29
+   icon_seamless          n= 900 MAE=  5.8 bias=0.84 r=0.30 | ev=137 POD=0.25 prec=0.42
+   gem_seamless           n= 900 MAE=  6.1 bias=1.01 r=0.32 | ev=137 POD=0.31 prec=0.34
+   ENSMEAN                n= 900 MAE=  6.2 bias=1.06 r=0.31 | ev=137 POD=0.32 prec=0.38
+   best_match             n= 900 MAE=  7.3 bias=1.29 r=0.30 | ev=137 POD=0.36 prec=0.34
+   gfs_seamless           n= 900 MAE=  7.3 bias=1.29 r=0.30 | ev=137 POD=0.36 prec=0.34
+   gfs_hrrr               n= 900 MAE=  7.3 bias=1.29 r=0.30 | ev=137 POD=0.36 prec=0.34
+   ncep_nbm_conus         n= 900 MAE=  7.5 bias=1.45 r=0.31 | ev=137 POD=0.40 prec=0.35
+ [24h_L3]
+   ecmwf_aifs025_single   n= 345 MAE=  4.5 bias=0.87 r=0.34 | ev= 40 POD=0.15 prec=0.26
+   ecmwf_ifs025           n= 900 MAE=  5.8 bias=0.72 r=0.25 | ev=137 POD=0.16 prec=0.32
+   gem_seamless           n= 900 MAE=  5.9 bias=0.86 r=0.29 | ev=137 POD=0.25 prec=0.40
+   ENSMEAN                n= 900 MAE=  6.0 bias=0.92 r=0.28 | ev=137 POD=0.22 prec=0.35
+   icon_seamless          n= 900 MAE=  6.1 bias=0.93 r=0.25 | ev=137 POD=0.20 prec=0.33
+   ncep_nbm_conus         n= 900 MAE=  6.4 bias=1.08 r=0.28 | ev=137 POD=0.31 prec=0.35
+   best_match             n= 900 MAE=  6.5 bias=1.00 r=0.23 | ev=137 POD=0.21 prec=0.28
+   gfs_seamless           n= 900 MAE=  6.5 bias=1.00 r=0.23 | ev=137 POD=0.21 prec=0.28
+ [24h_L5]
+   ecmwf_aifs025_single   n= 335 MAE=  4.6 bias=0.86 r=0.37 | ev= 40 POD=0.17 prec=0.24
+   best_match             n= 900 MAE=  5.1 bias=0.45 r=0.24 | ev=137 POD=0.09 prec=0.35
+   gfs_seamless           n= 900 MAE=  5.1 bias=0.45 r=0.24 | ev=137 POD=0.09 prec=0.35
+   ecmwf_ifs025           n= 900 MAE=  5.4 bias=0.60 r=0.23 | ev=137 POD=0.15 prec=0.36
+   ENSMEAN                n= 900 MAE=  5.4 bias=0.75 r=0.31 | ev=137 POD=0.20 prec=0.38
+   icon_seamless          n= 900 MAE=  5.5 bias=0.80 r=0.31 | ev=137 POD=0.27 prec=0.39
+   gem_seamless           n= 900 MAE=  6.2 bias=0.85 r=0.22 | ev=137 POD=0.21 prec=0.35
+   ncep_nbm_conus         n= 900 MAE=  6.3 bias=1.07 r=0.32 | ev=137 POD=0.31 prec=0.35
+ [72h]
+   ecmwf_aifs025_single   n= 345 MAE=  8.2 bias=0.84 r=0.66 | ev= 42 POD=0.21 prec=0.60
+   icon_seamless          n= 890 MAE=  9.9 bias=0.90 r=0.66 | ev=124 POD=0.52 prec=0.70
+   ENSMEAN                n= 890 MAE= 10.0 bias=0.99 r=0.66 | ev=124 POD=0.51 prec=0.66
+   gem_seamless           n= 890 MAE= 10.2 bias=0.97 r=0.68 | ev=124 POD=0.52 prec=0.68
+   ecmwf_ifs025           n= 890 MAE= 10.3 bias=0.73 r=0.61 | ev=124 POD=0.34 prec=0.70
+   ncep_nbm_conus         n= 890 MAE= 11.9 bias=1.25 r=0.63 | ev=124 POD=0.66 prec=0.62
+   best_match             n= 890 MAE= 12.0 bias=1.12 r=0.61 | ev=124 POD=0.56 prec=0.60
+   gfs_seamless           n= 890 MAE= 12.0 bias=1.12 r=0.61 | ev=124 POD=0.56 prec=0.60
+
+=== POOLED over sites, season 2025-26 (mm SWE; events 24h>=12.7, 72h>=38.0) ===
+ [24h_L1]
+   ecmwf_ifs025           n= 900 MAE=  5.0 bias=0.69 r=0.37 | ev=121 POD=0.26 prec=0.43
+   ecmwf_aifs025_single   n= 900 MAE=  5.0 bias=0.75 r=0.38 | ev=121 POD=0.29 prec=0.47
+   ecmwf_ifs              n= 900 MAE=  5.5 bias=0.91 r=0.38 | ev=121 POD=0.31 prec=0.38
+   gem_seamless           n= 900 MAE=  5.5 bias=0.96 r=0.41 | ev=121 POD=0.39 prec=0.43
+   ENSMEAN                n= 880 MAE=  5.7 bias=1.05 r=0.41 | ev=115 POD=0.40 prec=0.41
+   icon_seamless          n= 880 MAE=  5.8 bias=0.97 r=0.36 | ev=115 POD=0.31 prec=0.38
+   best_match             n= 900 MAE=  6.7 bias=1.24 r=0.40 | ev=121 POD=0.41 prec=0.41
+   gfs_seamless           n= 900 MAE=  6.7 bias=1.24 r=0.40 | ev=121 POD=0.41 prec=0.41
+   gfs_hrrr               n= 900 MAE=  6.7 bias=1.24 r=0.40 | ev=121 POD=0.41 prec=0.41
+   ncep_nbm_conus         n= 900 MAE=  6.8 bias=1.36 r=0.42 | ev=121 POD=0.42 prec=0.38
+ [24h_L3]
+   ecmwf_ifs025           n= 900 MAE=  5.1 bias=0.68 r=0.33 | ev=121 POD=0.20 prec=0.37
+   ecmwf_aifs025_single   n= 900 MAE=  5.1 bias=0.76 r=0.37 | ev=121 POD=0.30 prec=0.44
+   ecmwf_ifs              n= 785 MAE=  5.3 bias=0.83 r=0.36 | ev=103 POD=0.29 prec=0.39
+   gem_seamless           n= 900 MAE=  5.4 bias=0.95 r=0.43 | ev=121 POD=0.36 prec=0.44
+   ENSMEAN                n= 900 MAE=  5.4 bias=0.93 r=0.41 | ev=121 POD=0.36 prec=0.41
+   ncep_nbm_conus         n= 900 MAE=  5.7 bias=1.06 r=0.42 | ev=121 POD=0.40 prec=0.40
+   icon_seamless          n= 900 MAE=  5.8 bias=0.99 r=0.39 | ev=121 POD=0.36 prec=0.41
+   best_match             n= 900 MAE=  5.9 bias=0.99 r=0.37 | ev=121 POD=0.33 prec=0.36
+   gfs_seamless           n= 900 MAE=  5.9 bias=0.99 r=0.37 | ev=121 POD=0.33 prec=0.36
+ [24h_L5]
+   best_match             n= 900 MAE=  4.7 bias=0.46 r=0.36 | ev=121 POD=0.17 prec=0.58
+   gfs_seamless           n= 900 MAE=  4.7 bias=0.46 r=0.36 | ev=121 POD=0.17 prec=0.58
+   ENSMEAN                n= 860 MAE=  5.0 bias=0.81 r=0.48 | ev=115 POD=0.29 prec=0.45
+   ecmwf_aifs025_single   n= 900 MAE=  5.0 bias=0.73 r=0.41 | ev=121 POD=0.23 prec=0.48
+   ecmwf_ifs025           n= 870 MAE=  5.1 bias=0.63 r=0.34 | ev=117 POD=0.20 prec=0.38
+   ncep_nbm_conus         n= 900 MAE=  5.3 bias=1.08 r=0.48 | ev=121 POD=0.44 prec=0.42
+   gem_seamless           n= 890 MAE=  5.4 bias=0.94 r=0.44 | ev=119 POD=0.39 prec=0.44
+   ecmwf_ifs              n= 900 MAE=  5.5 bias=0.86 r=0.36 | ev=121 POD=0.29 prec=0.37
+   icon_seamless          n= 900 MAE=  5.6 bias=0.99 r=0.45 | ev=121 POD=0.30 prec=0.38
+ [72h]
+   gem_seamless           n= 890 MAE=  9.5 bias=0.98 r=0.76 | ev=117 POD=0.56 prec=0.61
+   ENSMEAN                n= 865 MAE=  9.5 bias=0.99 r=0.74 | ev=110 POD=0.50 prec=0.58
+   ecmwf_aifs025_single   n= 890 MAE=  9.5 bias=0.75 r=0.70 | ev=117 POD=0.35 prec=0.68
+   ecmwf_ifs              n= 775 MAE=  9.9 bias=0.87 r=0.70 | ev= 98 POD=0.42 prec=0.66
+   ecmwf_ifs025           n= 890 MAE=  9.9 bias=0.69 r=0.67 | ev=117 POD=0.31 prec=0.75
+   icon_seamless          n= 865 MAE= 10.1 bias=0.99 r=0.72 | ev=110 POD=0.46 prec=0.54
+   best_match             n= 890 MAE= 11.0 bias=1.07 r=0.69 | ev=117 POD=0.60 prec=0.57
+   gfs_seamless           n= 890 MAE= 11.0 bias=1.07 r=0.69 | ev=117 POD=0.60 prec=0.57
+   ncep_nbm_conus         n= 890 MAE= 11.5 bias=1.19 r=0.71 | ev=117 POD=0.61 prec=0.53
+
+=== D: per-site multiplicative bias correction (train on other season), 72h, pooled ===
+   best_match             raw: n=1780 MAE= 11.5 bias=1.10 r=0.65 | ev=241 POD=0.58 prec=0.59
+                          cor: n=1780 MAE= 10.3 bias=1.00 r=0.67 | ev=241 POD=0.57 prec=0.59
+   gfs_seamless           raw: n=1780 MAE= 11.5 bias=1.10 r=0.65 | ev=241 POD=0.58 prec=0.59
+                          cor: n=1780 MAE= 10.3 bias=1.00 r=0.67 | ev=241 POD=0.57 prec=0.59
+   ecmwf_ifs025           raw: n=1780 MAE= 10.1 bias=0.71 r=0.64 | ev=241 POD=0.32 prec=0.72
+                          cor: n=1780 MAE= 10.3 bias=1.01 r=0.67 | ev=241 POD=0.53 prec=0.61
+   ecmwf_aifs025_single   raw: n=1235 MAE=  9.2 bias=0.77 r=0.69 | ev=159 POD=0.31 prec=0.67
+                          cor: n=1235 MAE=  8.9 bias=0.92 r=0.72 | ev=159 POD=0.48 prec=0.70
+   ncep_nbm_conus         raw: n=1780 MAE= 11.7 bias=1.22 r=0.67 | ev=241 POD=0.63 prec=0.57
+                          cor: n=1780 MAE= 10.1 bias=1.00 r=0.68 | ev=241 POD=0.54 prec=0.60
+   icon_seamless          raw: n=1755 MAE= 10.0 bias=0.94 r=0.69 | ev=234 POD=0.49 prec=0.62
+                          cor: n=1755 MAE= 10.8 bias=1.07 r=0.69 | ev=234 POD=0.54 prec=0.56
+   gem_seamless           raw: n=1780 MAE=  9.9 bias=0.97 r=0.72 | ev=241 POD=0.54 prec=0.64
+                          cor: n=1780 MAE= 10.0 bias=1.00 r=0.72 | ev=241 POD=0.56 prec=0.62
+   ENSMEAN                raw: n=1755 MAE=  9.8 bias=0.99 r=0.71 | ev=234 POD=0.50 prec=0.62
+                          cor: n=1755 MAE=  9.4 bias=1.00 r=0.73 | ev=234 POD=0.57 prec=0.64
+
+=== Large storms (top-8 observed 72h windows per site per both seasons), 72h fc/obs ===
+   best_match             n=40 median fc/obs=0.73  MAE= 36.1mm  share <50% of obs=0.40
+   gfs_seamless           n=40 median fc/obs=0.73  MAE= 36.1mm  share <50% of obs=0.40
+   ecmwf_ifs025           n=40 median fc/obs=0.33  MAE= 47.0mm  share <50% of obs=0.57
+   ecmwf_ifs              n=19 median fc/obs=0.35  MAE= 47.3mm  share <50% of obs=0.58
+   ecmwf_aifs025_single   n=28 median fc/obs=0.43  MAE= 43.6mm  share <50% of obs=0.61
+   ncep_nbm_conus         n=40 median fc/obs=0.64  MAE= 33.9mm  share <50% of obs=0.25
+   icon_seamless          n=39 median fc/obs=0.61  MAE= 35.7mm  share <50% of obs=0.41
+   gem_seamless           n=40 median fc/obs=0.61  MAE= 32.8mm  share <50% of obs=0.33
+   ENSMEAN                n=39 median fc/obs=0.56  MAE= 35.2mm  share <50% of obs=0.41
+
+=== Daily-mean 2m temp bias vs station (lead 1), degC ===
+   best_match             n=1808 bias=-1.79 MAE=2.08
+   gfs_seamless           n=1808 bias=-1.79 MAE=2.08
+   ecmwf_ifs025           n=1808 bias=-2.23 MAE=2.36
+   ecmwf_ifs              n= 824 bias=-1.95 MAE=2.13
+   ecmwf_aifs025_single   n=1264 bias=-0.71 MAE=1.70
+   ncep_nbm_conus         n=1808 bias=+1.02 MAE=2.28
+   icon_seamless          n=1788 bias=+0.31 MAE=1.97
+   gem_seamless           n=1808 bias=-1.47 MAE=1.83
+   gfs_hrrr               n=1808 bias=-1.79 MAE=2.08
+
+######## US (SNOTEL depth gain): model snowfall (lead1, cm) vs observed new snow (cm) ########
+   best_match             n=1800 MAE=  4.1 bias=0.93 r=0.23 | ev=144 POD=0.13 prec=0.21   (event: >=15cm/24h)
+   gfs_seamless           n=1620 MAE=  4.2 bias=0.96 r=0.23 | ev=132 POD=0.14 prec=0.21   (event: >=15cm/24h)
+   ecmwf_ifs              n= 820 MAE=  3.6 bias=1.00 r=0.32 | ev= 56 POD=0.18 prec=0.26   (event: >=15cm/24h)
+   ncep_nbm_conus         n=1620 MAE=  8.1 bias=2.68 r=0.24 | ev=132 POD=0.39 prec=0.20   (event: >=15cm/24h)
+   icon_seamless          n=1780 MAE=  3.5 bias=0.58 r=0.18 | ev=138 POD=0.11 prec=0.29   (event: >=15cm/24h)
+   gem_seamless           n=1800 MAE=  4.0 bias=0.97 r=0.27 | ev=144 POD=0.20 prec=0.31   (event: >=15cm/24h)
+   gfs_hrrr               n=1620 MAE=  4.2 bias=0.96 r=0.23 | ev=132 POD=0.14 prec=0.21   (event: >=15cm/24h)
+
+######## JAPAN / AMeDAS valley stations ########
+
+--- hakuba_amedas: grid elev used by Open-Meteo = 708.0 m
+  best_match             L1 MAE= 2.6 b=1.25 | L2 MAE= 2.7 b=1.29 | L3 MAE= 3.7 b=1.45 | L5 MAE= 3.6 b=1.27 || 72h n= 358 MAE=  7.1 bias=1.31 r=0.76 | ev= 17 POD=0.53 prec=0.28
+  jma_seamless           L1 MAE= 2.6 b=1.25 | L2 MAE= 2.9 b=1.25 | L3 MAE= 3.1 b=0.55 | L5 MAE= 3.5 b=0.51 || 72h n= 343 MAE=  6.3 bias=1.00 r=0.69 | ev= 17 POD=0.29 prec=0.36
+  jma_msm                L1 MAE= 2.6 b=1.25 | L2 MAE= 2.8 b=1.31 | L3   -- | L5   -- || 72h     (no data)
+  ecmwf_ifs025           L1 MAE= 5.8 b=2.44 | L2 MAE= 6.4 b=2.61 | L3 MAE= 6.2 b=2.46 | L5 MAE= 7.3 b=2.55 || 72h n= 358 MAE= 17.3 bias=2.52 r=0.75 | ev= 17 POD=0.88 prec=0.14
+  ecmwf_ifs              L1 MAE= 2.4 b=1.58 | L2 MAE= 2.9 b=1.69 | L3 MAE= 2.9 b=1.69 | L5 MAE= 3.2 b=1.56 || 72h n= 156 MAE=  7.3 bias=1.74 r=0.80 | ev=  0 POD= nan prec=0.00
+  ecmwf_aifs025_single   L1 MAE= 5.3 b=2.47 | L2 MAE= 5.0 b=2.40 | L3 MAE= 4.9 b=2.30 | L5 MAE= 5.4 b=2.25 || 72h n= 248 MAE= 13.8 bias=2.37 r=0.67 | ev=  8 POD=0.75 prec=0.15
+  gfs_seamless           L1 MAE= 2.2 b=1.12 | L2 MAE= 2.4 b=1.14 | L3 MAE= 2.9 b=1.22 | L5 MAE= 2.9 b=0.52 || 72h n= 358 MAE=  5.6 bias=1.17 r=0.81 | ev= 17 POD=0.65 prec=0.61
+  icon_seamless          L1 MAE= 4.1 b=1.69 | L2 MAE= 4.5 b=1.78 | L3 MAE= 4.6 b=1.73 | L5 MAE= 4.7 b=1.65 || 72h n= 353 MAE= 11.3 bias=1.72 r=0.59 | ev= 15 POD=0.47 prec=0.16
+  gem_seamless           L1 MAE= 3.7 b=1.70 | L2 MAE= 4.0 b=1.71 | L3 MAE= 4.6 b=1.79 | L5 MAE= 5.1 b=1.90 || 72h n= 358 MAE= 10.5 bias=1.74 r=0.67 | ev= 17 POD=0.41 prec=0.21
+  ENSMEAN                L1 MAE= 3.1 b=1.67 | L2 MAE= 3.4 b=1.74 | L3 MAE= 3.4 b=1.54 | L5 MAE= 3.7 b=1.40 || 72h n= 341 MAE=  8.5 bias=1.65 r=0.81 | ev= 15 POD=0.60 prec=0.24
+
+--- arai_sekiyama: grid elev used by Open-Meteo = 352.0 m
+  best_match             L1 MAE= 3.5 b=1.35 | L2 MAE= 4.2 b=1.38 | L3 MAE= 4.0 b=0.99 | L5 MAE= 4.5 b=1.00 || 72h n= 358 MAE=  9.4 bias=1.24 r=0.75 | ev= 45 POD=0.62 prec=0.44
+  jma_seamless           L1 MAE= 3.5 b=1.35 | L2 MAE= 4.0 b=1.36 | L3 MAE= 4.7 b=1.63 | L5 MAE= 5.3 b=1.58 || 72h n= 343 MAE= 10.5 bias=1.45 r=0.80 | ev= 45 POD=0.80 prec=0.40
+  jma_msm                L1 MAE= 3.5 b=1.35 | L2 MAE= 4.1 b=1.36 | L3   -- | L5   -- || 72h     (no data)
+  ecmwf_ifs025           L1 MAE= 4.2 b=1.37 | L2 MAE= 4.4 b=1.39 | L3 MAE= 4.3 b=1.31 | L5 MAE= 5.1 b=1.36 || 72h n= 358 MAE= 10.0 bias=1.36 r=0.75 | ev= 45 POD=0.71 prec=0.48
+  ecmwf_ifs              L1 MAE= 4.2 b=1.21 | L2 MAE= 4.6 b=1.26 | L3 MAE= 4.4 b=1.02 | L5 MAE= 5.0 b=1.20 || 72h n= 156 MAE=  9.4 bias=1.09 r=0.72 | ev= 22 POD=0.59 prec=0.59
+  ecmwf_aifs025_single   L1 MAE= 3.8 b=1.52 | L2 MAE= 3.8 b=1.49 | L3 MAE= 3.7 b=1.45 | L5 MAE= 4.1 b=1.39 || 72h n= 248 MAE=  9.5 bias=1.48 r=0.81 | ev= 22 POD=0.82 prec=0.55
+  gfs_seamless           L1 MAE= 4.9 b=1.76 | L2 MAE= 5.6 b=1.82 | L3 MAE= 5.8 b=1.76 | L5 MAE= 3.4 b=0.76 || 72h n= 358 MAE= 14.5 bias=1.79 r=0.81 | ev= 45 POD=0.96 prec=0.38
+  icon_seamless          L1 MAE= 3.7 b=0.88 | L2 MAE= 3.9 b=0.95 | L3 MAE= 4.2 b=0.98 | L5 MAE= 4.3 b=0.91 || 72h n= 353 MAE=  9.5 bias=0.93 r=0.66 | ev= 45 POD=0.36 prec=0.67
+  gem_seamless           L1 MAE= 3.5 b=1.43 | L2 MAE= 3.8 b=1.44 | L3 MAE= 4.3 b=1.39 | L5 MAE= 4.9 b=1.41 || 72h n= 358 MAE=  9.5 bias=1.43 r=0.84 | ev= 45 POD=0.89 prec=0.48
+  ENSMEAN                L1 MAE= 3.1 b=1.36 | L2 MAE= 3.4 b=1.38 | L3 MAE= 3.8 b=1.41 | L5 MAE= 3.8 b=1.20 || 72h n= 341 MAE=  8.7 bias=1.38 r=0.86 | ev= 45 POD=0.89 prec=0.52
+
+=== POOLED over sites, season 2024-25 (mm SWE; events 24h>=12.7, 72h>=38.0) ===
+ [24h_L1]
+   icon_seamless          n= 362 MAE=  3.2 bias=0.87 r=0.76 | ev= 48 POD=0.40 prec=0.61
+   ENSMEAN                n= 362 MAE=  3.2 bias=1.46 r=0.86 | ev= 48 POD=0.85 prec=0.58
+   best_match             n= 362 MAE=  3.4 bias=1.35 r=0.80 | ev= 48 POD=0.83 prec=0.53
+   jma_seamless           n= 362 MAE=  3.4 bias=1.35 r=0.80 | ev= 48 POD=0.83 prec=0.53
+   jma_msm                n= 362 MAE=  3.4 bias=1.35 r=0.80 | ev= 48 POD=0.83 prec=0.53
+   gem_seamless           n= 362 MAE=  4.1 bias=1.62 r=0.80 | ev= 48 POD=0.88 prec=0.51
+   gfs_seamless           n= 362 MAE=  4.2 bias=1.59 r=0.78 | ev= 48 POD=0.81 prec=0.54
+   ecmwf_aifs025_single   n= 142 MAE=  4.2 bias=2.43 r=0.65 | ev=  6 POD=1.00 prec=0.25
+   ecmwf_ifs025           n= 362 MAE=  5.3 bias=1.86 r=0.73 | ev= 48 POD=0.83 prec=0.39
+ [24h_L3]
+   ecmwf_aifs025_single   n= 138 MAE=  3.7 bias=2.29 r=0.65 | ev=  5 POD=1.00 prec=0.28
+   best_match             n= 362 MAE=  3.8 bias=1.01 r=0.72 | ev= 48 POD=0.40 prec=0.44
+   icon_seamless          n= 362 MAE=  3.8 bias=1.01 r=0.72 | ev= 48 POD=0.40 prec=0.44
+   ENSMEAN                n= 362 MAE=  3.9 bias=1.50 r=0.81 | ev= 48 POD=0.81 prec=0.48
+   jma_seamless           n= 362 MAE=  4.3 bias=1.31 r=0.73 | ev= 48 POD=0.62 prec=0.47
+   gfs_seamless           n= 362 MAE=  5.1 bias=1.64 r=0.64 | ev= 48 POD=0.83 prec=0.47
+   gem_seamless           n= 362 MAE=  5.2 bias=1.65 r=0.66 | ev= 48 POD=0.69 prec=0.38
+   ecmwf_ifs025           n= 362 MAE=  5.8 bias=1.89 r=0.64 | ev= 48 POD=0.71 prec=0.35
+ [24h_L5]
+   gfs_seamless           n= 362 MAE=  3.3 bias=0.71 r=0.63 | ev= 48 POD=0.40 prec=0.68
+   ENSMEAN                n= 362 MAE=  3.9 bias=1.27 r=0.70 | ev= 48 POD=0.60 prec=0.56
+   ecmwf_aifs025_single   n= 134 MAE=  4.0 bias=2.32 r=0.56 | ev=  5 POD=0.80 prec=0.22
+   best_match             n= 362 MAE=  4.0 bias=0.91 r=0.49 | ev= 48 POD=0.48 prec=0.61
+   icon_seamless          n= 362 MAE=  4.0 bias=0.91 r=0.49 | ev= 48 POD=0.48 prec=0.61
+   jma_seamless           n= 362 MAE=  4.9 bias=1.25 r=0.56 | ev= 48 POD=0.56 prec=0.43
+   gem_seamless           n= 362 MAE=  5.3 bias=1.57 r=0.61 | ev= 48 POD=0.65 prec=0.37
+   ecmwf_ifs025           n= 362 MAE=  6.6 bias=1.90 r=0.52 | ev= 48 POD=0.71 prec=0.32
+ [72h]
+   icon_seamless          n= 358 MAE=  8.2 bias=0.92 r=0.67 | ev= 36 POD=0.31 prec=0.58
+   best_match             n= 358 MAE=  8.5 bias=1.23 r=0.76 | ev= 36 POD=0.50 prec=0.39
+   ENSMEAN                n= 358 MAE=  9.0 bias=1.49 r=0.84 | ev= 36 POD=0.75 prec=0.40
+   jma_seamless           n= 358 MAE=  9.2 bias=1.35 r=0.77 | ev= 36 POD=0.61 prec=0.37
+   ecmwf_aifs025_single   n= 138 MAE= 11.0 bias=2.35 r=0.70 | ev=  4 POD=0.50 prec=0.17
+   gem_seamless           n= 358 MAE= 11.8 bias=1.66 r=0.74 | ev= 36 POD=0.72 prec=0.36
+   gfs_seamless           n= 358 MAE= 12.3 bias=1.65 r=0.76 | ev= 36 POD=0.78 prec=0.35
+   ecmwf_ifs025           n= 358 MAE= 14.6 bias=1.90 r=0.71 | ev= 36 POD=0.78 prec=0.28
+
+=== POOLED over sites, season 2025-26 (mm SWE; events 24h>=12.7, 72h>=38.0) ===
+ [24h_L1]
+   best_match             n= 362 MAE=  2.7 bias=1.27 r=0.81 | ev= 37 POD=0.84 prec=0.54
+   jma_seamless           n= 362 MAE=  2.7 bias=1.27 r=0.81 | ev= 37 POD=0.84 prec=0.54
+   jma_msm                n= 362 MAE=  2.7 bias=1.27 r=0.81 | ev= 37 POD=0.84 prec=0.54
+   gfs_seamless           n= 362 MAE=  2.9 bias=1.41 r=0.84 | ev= 37 POD=0.95 prec=0.48
+   gem_seamless           n= 362 MAE=  3.1 bias=1.45 r=0.85 | ev= 37 POD=0.86 prec=0.49
+   ENSMEAN                n= 354 MAE=  3.1 bias=1.51 r=0.84 | ev= 36 POD=0.94 prec=0.47
+   ecmwf_ifs              n= 362 MAE=  3.3 bias=1.34 r=0.77 | ev= 37 POD=0.76 prec=0.44
+   ecmwf_aifs025_single   n= 362 MAE=  4.6 bias=1.78 r=0.73 | ev= 37 POD=1.00 prec=0.40
+   ecmwf_ifs025           n= 362 MAE=  4.7 bias=1.74 r=0.68 | ev= 37 POD=0.78 prec=0.36
+   icon_seamless          n= 354 MAE=  4.8 bias=1.57 r=0.56 | ev= 36 POD=0.64 prec=0.31
+ [24h_L3]
+   ENSMEAN                n= 332 MAE=  3.4 bias=1.42 r=0.83 | ev= 36 POD=0.86 prec=0.46
+   jma_seamless           n= 332 MAE=  3.4 bias=1.08 r=0.69 | ev= 36 POD=0.67 prec=0.55
+   gfs_seamless           n= 362 MAE=  3.6 bias=1.45 r=0.79 | ev= 37 POD=0.81 prec=0.47
+   ecmwf_ifs              n= 316 MAE=  3.7 bias=1.23 r=0.66 | ev= 34 POD=0.71 prec=0.44
+   gem_seamless           n= 362 MAE=  3.7 bias=1.44 r=0.76 | ev= 37 POD=0.81 prec=0.43
+   best_match             n= 362 MAE=  3.9 bias=1.35 r=0.69 | ev= 37 POD=0.73 prec=0.41
+   ecmwf_aifs025_single   n= 362 MAE=  4.6 bias=1.69 r=0.71 | ev= 37 POD=0.92 prec=0.41
+   ecmwf_ifs025           n= 362 MAE=  4.7 bias=1.64 r=0.65 | ev= 37 POD=0.65 prec=0.32
+   icon_seamless          n= 362 MAE=  4.9 bias=1.58 r=0.61 | ev= 37 POD=0.65 prec=0.32
+ [24h_L5]
+   gfs_seamless           n= 362 MAE=  3.0 bias=0.62 r=0.65 | ev= 37 POD=0.32 prec=0.60
+   ENSMEAN                n= 328 MAE=  3.6 bias=1.29 r=0.73 | ev= 36 POD=0.75 prec=0.53
+   jma_seamless           n= 332 MAE=  3.9 bias=1.05 r=0.57 | ev= 36 POD=0.61 prec=0.54
+   best_match             n= 362 MAE=  4.1 bias=1.33 r=0.64 | ev= 37 POD=0.54 prec=0.34
+   ecmwf_ifs              n= 362 MAE=  4.1 bias=1.33 r=0.64 | ev= 37 POD=0.54 prec=0.34
+   gem_seamless           n= 356 MAE=  4.8 bias=1.64 r=0.65 | ev= 37 POD=0.81 prec=0.36
+   icon_seamless          n= 362 MAE=  5.0 bias=1.53 r=0.57 | ev= 37 POD=0.57 prec=0.30
+   ecmwf_aifs025_single   n= 362 MAE=  5.0 bias=1.62 r=0.57 | ev= 37 POD=0.68 prec=0.32
+   ecmwf_ifs025           n= 348 MAE=  5.8 bias=1.75 r=0.49 | ev= 37 POD=0.65 prec=0.30
+ [72h]
+   jma_seamless           n= 328 MAE=  7.4 bias=1.19 r=0.77 | ev= 26 POD=0.73 prec=0.43
+   gfs_seamless           n= 358 MAE=  7.8 bias=1.42 r=0.85 | ev= 26 POD=1.00 prec=0.53
+   best_match             n= 358 MAE=  8.0 bias=1.31 r=0.76 | ev= 26 POD=0.73 prec=0.38
+   gem_seamless           n= 358 MAE=  8.2 bias=1.44 r=0.83 | ev= 26 POD=0.81 prec=0.46
+   ENSMEAN                n= 324 MAE=  8.3 bias=1.48 r=0.86 | ev= 24 POD=0.92 prec=0.47
+   ecmwf_ifs              n= 312 MAE=  8.3 bias=1.29 r=0.73 | ev= 22 POD=0.59 prec=0.37
+   ecmwf_aifs025_single   n= 358 MAE= 11.9 bias=1.73 r=0.72 | ev= 26 POD=0.85 prec=0.36
+   ecmwf_ifs025           n= 358 MAE= 12.6 bias=1.74 r=0.65 | ev= 26 POD=0.73 prec=0.26
+   icon_seamless          n= 348 MAE= 12.6 bias=1.59 r=0.56 | ev= 24 POD=0.50 prec=0.25
+
+=== D: per-site multiplicative bias correction (train on other season), 72h, pooled ===
+   best_match             raw: n= 716 MAE=  8.2 bias=1.27 r=0.76 | ev= 62 POD=0.60 prec=0.39
+                          cor: n= 716 MAE=  7.0 bias=1.00 r=0.75 | ev= 62 POD=0.37 prec=0.45
+   jma_seamless           raw: n= 686 MAE=  8.4 bias=1.27 r=0.77 | ev= 62 POD=0.66 prec=0.40
+                          cor: n= 686 MAE=  7.1 bias=1.01 r=0.75 | ev= 62 POD=0.40 prec=0.45
+   ecmwf_ifs025           raw: n= 716 MAE= 13.6 bias=1.82 r=0.68 | ev= 62 POD=0.76 prec=0.27
+                          cor: n= 716 MAE=  7.3 bias=1.01 r=0.73 | ev= 62 POD=0.32 prec=0.71
+   ecmwf_aifs025_single   raw: n= 496 MAE= 11.6 bias=1.84 r=0.72 | ev= 30 POD=0.80 prec=0.33
+                          cor: n= 496 MAE=  7.7 bias=0.84 r=0.54 | ev= 30 POD=0.00 prec= nan
+   gfs_seamless           raw: n= 716 MAE= 10.1 bias=1.54 r=0.79 | ev= 62 POD=0.87 prec=0.42
+                          cor: n= 716 MAE=  6.6 bias=1.02 r=0.78 | ev= 62 POD=0.55 prec=0.58
+   icon_seamless          raw: n= 706 MAE= 10.4 bias=1.24 r=0.58 | ev= 60 POD=0.38 prec=0.34
+                          cor: n= 706 MAE= 10.8 bias=1.12 r=0.53 | ev= 60 POD=0.35 prec=0.32
+   gem_seamless           raw: n= 716 MAE= 10.0 bias=1.55 r=0.78 | ev= 62 POD=0.76 prec=0.40
+                          cor: n= 716 MAE=  7.2 bias=1.01 r=0.76 | ev= 62 POD=0.42 prec=0.67
+   ENSMEAN                raw: n= 682 MAE=  8.6 bias=1.49 r=0.85 | ev= 60 POD=0.82 prec=0.43
+                          cor: n= 682 MAE=  6.4 bias=1.00 r=0.81 | ev= 60 POD=0.38 prec=0.68
+
+=== Large storms (top-8 observed 72h windows per site per both seasons), 72h fc/obs ===
+   best_match             n=16 median fc/obs=0.89  MAE= 14.1mm  share <50% of obs=0.00
+   jma_seamless           n=16 median fc/obs=0.90  MAE= 17.9mm  share <50% of obs=0.06
+   ecmwf_ifs025           n=16 median fc/obs=1.19  MAE= 19.8mm  share <50% of obs=0.00
+   ecmwf_ifs              n= 5 median fc/obs=0.71  MAE= 22.7mm  share <50% of obs=0.20
+   ecmwf_aifs025_single   n= 8 median fc/obs=0.79  MAE= 18.7mm  share <50% of obs=0.00
+   gfs_seamless           n=16 median fc/obs=1.21  MAE= 22.7mm  share <50% of obs=0.00
+   icon_seamless          n=15 median fc/obs=0.67  MAE= 20.6mm  share <50% of obs=0.13
+   gem_seamless           n=16 median fc/obs=0.97  MAE= 15.6mm  share <50% of obs=0.06
+   ENSMEAN                n=15 median fc/obs=0.98  MAE= 10.6mm  share <50% of obs=0.00
+
+=== Daily-mean 2m temp bias vs station (lead 1), degC ===
+   best_match             n= 724 bias=+0.64 MAE=0.98
+   jma_seamless           n= 724 bias=+0.64 MAE=0.98
+   jma_msm                n= 724 bias=+0.64 MAE=0.98
+   ecmwf_ifs025           n= 724 bias=-0.80 MAE=1.37
+   ecmwf_ifs              n= 330 bias=+0.17 MAE=1.02
+   ecmwf_aifs025_single   n= 504 bias=+1.98 MAE=2.27
+   gfs_seamless           n= 724 bias=+0.02 MAE=1.01
+   icon_seamless          n= 716 bias=-0.17 MAE=1.39
+   gem_seamless           n= 724 bias=+0.44 MAE=1.13
+
+######## JAPAN (AMeDAS 降雪の深さ): model snowfall (lead1, cm) vs observed new snow (cm) ########
+   best_match             n= 715 MAE=  2.5 bias=0.46 r=0.72 | ev= 66 POD=0.23 prec=0.71   (event: >=15cm/24h)
+   jma_seamless           n= 715 MAE=  2.5 bias=0.46 r=0.72 | ev= 66 POD=0.23 prec=0.71   (event: >=15cm/24h)
+   jma_msm                n= 715 MAE=  2.5 bias=0.46 r=0.72 | ev= 66 POD=0.23 prec=0.71   (event: >=15cm/24h)
+   ecmwf_ifs              n= 330 MAE=  2.0 bias=0.40 r=0.81 | ev= 20 POD=0.20 prec=1.00   (event: >=15cm/24h)
+   gfs_seamless           n= 641 MAE=  2.8 bias=0.34 r=0.80 | ev= 64 POD=0.19 prec=0.92   (event: >=15cm/24h)
+   icon_seamless          n= 707 MAE=  2.9 bias=0.40 r=0.66 | ev= 66 POD=0.15 prec=0.83   (event: >=15cm/24h)
+   gem_seamless           n= 709 MAE=  2.7 bias=0.42 r=0.70 | ev= 66 POD=0.17 prec=0.92   (event: >=15cm/24h)

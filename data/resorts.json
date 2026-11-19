@@ -1,0 +1,1138 @@
+{
+ "palisades": {
+  "name": "Palisades Tahoe",
+  "country": "US",
+  "tz": "America/Los_Angeles",
+  "base": {
+   "lat": 39.1969,
+   "lon": -120.2354,
+   "ft": 6200,
+   "label": "Village"
+  },
+  "mid": {
+   "lat": 39.1899,
+   "lon": -120.2658,
+   "ft": 8000,
+   "label": "High Camp"
+  },
+  "summit": {
+   "lat": 39.1983,
+   "lon": -120.2871,
+   "ft": 9050,
+   "label": "Peak"
+  },
+  "dem_ft": {
+   "base": 6214,
+   "mid": 8015,
+   "summit": 8953
+  },
+  "obs": [
+   "snotel",
+   "784:CA:SNTL",
+   "Palisades Tahoe SNOTEL (High Camp area)",
+   8010,
+   39.18986,
+   -120.26576
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "alpine": {
+  "name": "Alpine Meadows",
+  "country": "US",
+  "tz": "America/Los_Angeles",
+  "base": {
+   "lat": 39.1645,
+   "lon": -120.2386,
+   "ft": 6835,
+   "label": "Base lodge"
+  },
+  "mid": {
+   "lat": 39.1567,
+   "lon": -120.2431,
+   "ft": 7500,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 39.1489,
+   "lon": -120.2476,
+   "ft": 8637,
+   "label": "Ward Peak"
+  },
+  "dem_ft": {
+   "base": 6906,
+   "mid": 7487,
+   "summit": 8471
+  },
+  "obs": [
+   "snotel",
+   "848:CA:SNTL",
+   "Ward Creek #3 SNOTEL",
+   6750,
+   39.13545,
+   -120.21865
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless"
+  ]
+ },
+ "whistler": {
+  "name": "Whistler",
+  "country": "CA",
+  "tz": "America/Vancouver",
+  "base": {
+   "lat": 50.115,
+   "lon": -122.9548,
+   "ft": 2214,
+   "label": "Village"
+  },
+  "mid": {
+   "lat": 50.0685,
+   "lon": -122.9566,
+   "ft": 6069,
+   "label": "Roundhouse"
+  },
+  "summit": {
+   "lat": 50.0592,
+   "lon": -122.9569,
+   "ft": 7160,
+   "label": "Whistler Peak"
+  },
+  "dem_ft": {
+   "base": 2228,
+   "mid": 6063,
+   "summit": 6939
+  },
+  "obs": [
+   "bcasws",
+   "3A20P",
+   "Callaghan Creek (BC snow pillow)",
+   3337,
+   50.137056,
+   -123.102889
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "kirkwood": {
+  "name": "Kirkwood",
+  "country": "US",
+  "tz": "America/Los_Angeles",
+  "base": {
+   "lat": 38.6847,
+   "lon": -120.0654,
+   "ft": 7800,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 38.675,
+   "lon": -120.063,
+   "ft": 8300,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 38.665,
+   "lon": -120.061,
+   "ft": 9800,
+   "label": "Top"
+  },
+  "dem_ft": {
+   "base": 7795,
+   "mid": 8310,
+   "summit": 9629
+  },
+  "obs": [
+   "snotel",
+   "1067:CA:SNTL",
+   "Carson Pass SNOTEL",
+   8360,
+   38.6927,
+   -120.0022
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "mammoth": {
+  "name": "Mammoth Mountain",
+  "country": "US",
+  "tz": "America/Los_Angeles",
+  "base": {
+   "lat": 37.651,
+   "lon": -119.027,
+   "ft": 8900,
+   "label": "Main Lodge"
+  },
+  "mid": {
+   "lat": 37.6385,
+   "lon": -119.0215,
+   "ft": 9600,
+   "label": "McCoy Station"
+  },
+  "summit": {
+   "lat": 37.6306,
+   "lon": -119.0326,
+   "ft": 11053,
+   "label": "Summit"
+  },
+  "dem_ft": {
+   "base": 8780,
+   "mid": 9521,
+   "summit": 11010
+  },
+  "obs": [
+   "cdec",
+   "MHP",
+   "Mammoth Pass (CDEC)",
+   9400,
+   37.61,
+   -119.033
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ],
+  "afd_office": "REV"
+ },
+ "bachelor": {
+  "name": "Mt. Bachelor",
+  "country": "US",
+  "tz": "America/Los_Angeles",
+  "base": {
+   "lat": 44.0012,
+   "lon": -121.6786,
+   "ft": 6300,
+   "label": "West Village"
+  },
+  "mid": {
+   "lat": 43.9876,
+   "lon": -121.6848,
+   "ft": 7775,
+   "label": "Pine Marten"
+  },
+  "summit": {
+   "lat": 43.9794,
+   "lon": -121.6885,
+   "ft": 9068,
+   "label": "Summit"
+  },
+  "dem_ft": {
+   "base": 6398,
+   "mid": 7772,
+   "summit": 8973
+  },
+  "obs": [
+   "snotel",
+   "815:OR:SNTL",
+   "Three Creeks Meadow SNOTEL",
+   5680,
+   44.14425,
+   -121.64095
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "alta": {
+  "name": "Alta",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 40.5885,
+   "lon": -111.638,
+   "ft": 8530,
+   "label": "Wildcat base"
+  },
+  "mid": {
+   "lat": 40.5808,
+   "lon": -111.6335,
+   "ft": 9600,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 40.568,
+   "lon": -111.6261,
+   "ft": 10550,
+   "label": "Upper mountain"
+  },
+  "dem_ft": {
+   "base": 8550,
+   "mid": 9590,
+   "summit": 10528
+  },
+  "obs": [
+   "snotel",
+   "1308:UT:SNTL",
+   "Atwater SNOTEL",
+   8750,
+   40.59124,
+   -111.63775
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless"
+  ]
+ },
+ "snowbird": {
+  "name": "Snowbird",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 40.5782,
+   "lon": -111.6674,
+   "ft": 7760,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 40.5633,
+   "lon": -111.6604,
+   "ft": 9500,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 40.5485,
+   "lon": -111.6534,
+   "ft": 11000,
+   "label": "Hidden Peak"
+  },
+  "dem_ft": {
+   "base": 7907,
+   "mid": 9452,
+   "summit": 10997
+  },
+  "obs": [
+   "snotel",
+   "766:UT:SNTL",
+   "Snowbird SNOTEL",
+   9170,
+   40.56914,
+   -111.65852
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless"
+  ]
+ },
+ "solitude": {
+  "name": "Solitude",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 40.6257,
+   "lon": -111.5996,
+   "ft": 7994,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 40.6012,
+   "lon": -111.5693,
+   "ft": 9300,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 40.593,
+   "lon": -111.5592,
+   "ft": 10488,
+   "label": "Summit"
+  },
+  "dem_ft": {
+   "base": 8035,
+   "mid": 9298,
+   "summit": 10331
+  },
+  "obs": [
+   "snotel",
+   "366:UT:SNTL",
+   "Brighton SNOTEL",
+   8790,
+   40.59936,
+   -111.58167
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "snowbasin": {
+  "name": "Snowbasin",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 41.2163,
+   "lon": -111.857,
+   "ft": 6391,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 41.2085,
+   "lon": -111.8727,
+   "ft": 8000,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 41.203,
+   "lon": -111.884,
+   "ft": 9350,
+   "label": "Needles"
+  },
+  "dem_ft": {
+   "base": 6391,
+   "mid": 7995,
+   "summit": 9301
+  },
+  "obs": [
+   "snotel",
+   "332:UT:SNTL",
+   "Ben Lomond Peak SNOTEL",
+   7690,
+   41.37603,
+   -111.94405
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "jackson": {
+  "name": "Jackson Hole",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 43.5877,
+   "lon": -110.8238,
+   "ft": 6311,
+   "label": "Teton Village"
+  },
+  "mid": {
+   "lat": 43.5936,
+   "lon": -110.853,
+   "ft": 8600,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 43.5972,
+   "lon": -110.8706,
+   "ft": 10450,
+   "label": "Rendezvous Peak"
+  },
+  "dem_ft": {
+   "base": 6302,
+   "mid": 8553,
+   "summit": 10394
+  },
+  "obs": [
+   "snotel",
+   "689:WY:SNTL",
+   "Phillips Bench SNOTEL",
+   8170,
+   43.51687,
+   -110.91258
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "bigsky": {
+  "name": "Big Sky",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 45.2857,
+   "lon": -111.3927,
+   "ft": 7500,
+   "label": "Mountain Village"
+  },
+  "mid": {
+   "lat": 45.2794,
+   "lon": -111.4407,
+   "ft": 9500,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 45.2781,
+   "lon": -111.4503,
+   "ft": 11166,
+   "label": "Lone Peak"
+  },
+  "dem_ft": {
+   "base": 7510,
+   "mid": 9455,
+   "summit": 11119
+  },
+  "obs": [
+   "snotel",
+   "590:MT:SNTL",
+   "Lone Mountain SNOTEL",
+   8820,
+   45.27412,
+   -111.42692
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "blackcomb": {
+  "name": "Blackcomb",
+  "country": "CA",
+  "tz": "America/Vancouver",
+  "base": {
+   "lat": 50.1155,
+   "lon": -122.9527,
+   "ft": 2214,
+   "label": "Village"
+  },
+  "mid": {
+   "lat": 50.0956,
+   "lon": -122.8971,
+   "ft": 6102,
+   "label": "Rendezvous"
+  },
+  "summit": {
+   "lat": 50.089,
+   "lon": -122.8786,
+   "ft": 8019,
+   "label": "Blackcomb summit"
+  },
+  "dem_ft": {
+   "base": 2224,
+   "mid": 6076,
+   "summit": 7608
+  },
+  "obs": [
+   "bcasws",
+   "3A20P",
+   "Callaghan Creek (BC snow pillow)",
+   3337,
+   50.137056,
+   -123.102889
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "revelstoke": {
+  "name": "Revelstoke",
+  "country": "CA",
+  "tz": "America/Vancouver",
+  "base": {
+   "lat": 50.958,
+   "lon": -118.1636,
+   "ft": 1680,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 50.9608,
+   "lon": -118.1288,
+   "ft": 4700,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 50.9636,
+   "lon": -118.094,
+   "ft": 7300,
+   "label": "Summit"
+  },
+  "dem_ft": {
+   "base": 1690,
+   "mid": 4675,
+   "summit": 7290
+  },
+  "obs": [
+   "bcasws",
+   "2A06P",
+   "Mount Revelstoke (BC snow pillow)",
+   6070,
+   51.036342,
+   -118.151603
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "kickinghorse": {
+  "name": "Kicking Horse",
+  "country": "CA",
+  "tz": "America/Edmonton",
+  "base": {
+   "lat": 51.3005,
+   "lon": -117.0432,
+   "ft": 3900,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 51.2903,
+   "lon": -117.0745,
+   "ft": 6200,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 51.283,
+   "lon": -117.0968,
+   "ft": 8218,
+   "label": "Top of Kicking Horse"
+  },
+  "dem_ft": {
+   "base": 3963,
+   "mid": 6217,
+   "summit": 8048
+  },
+  "obs": [
+   "bcasws",
+   "2A31P",
+   "Caribou Creek (BC snow pillow)",
+   7221,
+   51.109028,
+   -117.228417
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "lakelouise": {
+  "name": "Lake Louise",
+  "country": "CA",
+  "tz": "America/Edmonton",
+  "base": {
+   "lat": 51.436,
+   "lon": -116.1572,
+   "ft": 5400,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 51.4532,
+   "lon": -116.1488,
+   "ft": 6700,
+   "label": "Whitehorn Lodge"
+  },
+  "summit": {
+   "lat": 51.4678,
+   "lon": -116.1417,
+   "ft": 8650,
+   "label": "Top of the World"
+  },
+  "dem_ft": {
+   "base": 5420,
+   "mid": 6667,
+   "summit": 8645
+  },
+  "obs": [
+   "abrivers",
+   "05BA815:158817042",
+   "Pika Run (Alberta Rivers)",
+   7382,
+   51.462944,
+   -116.117833
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "abasin": {
+  "name": "Arapahoe Basin",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 39.639,
+   "lon": -105.8793,
+   "ft": 10780,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 39.6326,
+   "lon": -105.8609,
+   "ft": 12000,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 39.63,
+   "lon": -105.8533,
+   "ft": 13050,
+   "label": "Summit"
+  },
+  "dem_ft": {
+   "base": 10768,
+   "mid": 12021,
+   "summit": 13061
+  },
+  "obs": [
+   "snotel",
+   "505:CO:SNTL",
+   "Grizzly Peak SNOTEL",
+   11110,
+   39.64646,
+   -105.8694
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless"
+  ]
+ },
+ "copper": {
+  "name": "Copper Mountain",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 39.5018,
+   "lon": -106.1511,
+   "ft": 9712,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 39.484,
+   "lon": -106.155,
+   "ft": 11200,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 39.469,
+   "lon": -106.1582,
+   "ft": 12313,
+   "label": "Tucker Mtn"
+  },
+  "dem_ft": {
+   "base": 9731,
+   "mid": 11175,
+   "summit": 12303
+  },
+  "obs": [
+   "snotel",
+   "415:CO:SNTL",
+   "Copper Mountain SNOTEL",
+   10500,
+   39.48917,
+   -106.17154
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless"
+  ]
+ },
+ "steamboat": {
+  "name": "Steamboat",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 40.4572,
+   "lon": -106.8045,
+   "ft": 6900,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 40.4565,
+   "lon": -106.7617,
+   "ft": 9080,
+   "label": "Thunderhead"
+  },
+  "summit": {
+   "lat": 40.4561,
+   "lon": -106.7403,
+   "ft": 10568,
+   "label": "Mt. Werner"
+  },
+  "dem_ft": {
+   "base": 6923,
+   "mid": 9144,
+   "summit": 10541
+  },
+  "obs": [
+   "snotel",
+   "457:CO:SNTL",
+   "Dry Lake SNOTEL",
+   8240,
+   40.5337,
+   -106.7814
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "telluride": {
+  "name": "Telluride",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 37.937,
+   "lon": -107.8466,
+   "ft": 9545,
+   "label": "Mountain Village"
+  },
+  "mid": {
+   "lat": 37.8901,
+   "lon": -107.8322,
+   "ft": 11600,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 37.8807,
+   "lon": -107.8293,
+   "ft": 13150,
+   "label": "Summit"
+  },
+  "dem_ft": {
+   "base": 9534,
+   "mid": 11604,
+   "summit": 13038
+  },
+  "obs": [
+   "snotel",
+   "1344:CO:SNTL",
+   "Alta Lakes SNOTEL",
+   11290,
+   37.88929,
+   -107.84484
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "crestedbutte": {
+  "name": "Crested Butte",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 38.8991,
+   "lon": -106.965,
+   "ft": 9375,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 38.8853,
+   "lon": -106.9484,
+   "ft": 10900,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 38.8817,
+   "lon": -106.944,
+   "ft": 12162,
+   "label": "North Face / High Lift"
+  },
+  "dem_ft": {
+   "base": 9383,
+   "mid": 10912,
+   "summit": 11916
+  },
+  "obs": [
+   "snotel",
+   "380:CO:SNTL",
+   "Butte SNOTEL",
+   10190,
+   38.89435,
+   -106.95327
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless"
+  ]
+ },
+ "hakuba": {
+  "name": "Hakuba Happo-One",
+  "country": "JP",
+  "tz": "Asia/Tokyo",
+  "base": {
+   "lat": 36.695,
+   "lon": 137.842,
+   "ft": 2493,
+   "label": "Happo base"
+  },
+  "mid": {
+   "lat": 36.6919,
+   "lon": 137.8108,
+   "ft": 4593,
+   "label": "Usagidaira"
+  },
+  "summit": {
+   "lat": 36.69,
+   "lon": 137.792,
+   "ft": 6007,
+   "label": "Grat top"
+  },
+  "dem_ft": {
+   "base": 2493,
+   "mid": 4498,
+   "summit": 5997
+  },
+  "obs": [
+   "amedas",
+   "a:48:0396",
+   "Hakuba (JMA AMeDAS)",
+   2306,
+   36.6983,
+   137.8617
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "niseko": {
+  "name": "Niseko Grand Hirafu",
+  "country": "JP",
+  "tz": "Asia/Tokyo",
+  "base": {
+   "lat": 42.8625,
+   "lon": 140.702,
+   "ft": 984,
+   "label": "Hirafu base"
+  },
+  "mid": {
+   "lat": 42.8676,
+   "lon": 140.6802,
+   "ft": 2600,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 42.872,
+   "lon": 140.6618,
+   "ft": 3937,
+   "label": "Peak lift top"
+  },
+  "dem_ft": {
+   "base": 961,
+   "mid": 2648,
+   "summit": 3947
+  },
+  "obs": [
+   "amedas",
+   "s:16:47433",
+   "Kutchan (JMA)",
+   578,
+   42.9,
+   140.7567
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "taos": {
+  "name": "Taos Ski Valley",
+  "country": "US",
+  "tz": "America/Denver",
+  "base": {
+   "lat": 36.596,
+   "lon": -105.4545,
+   "ft": 9350,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 36.5777,
+   "lon": -105.4314,
+   "ft": 11200,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 36.5685,
+   "lon": -105.4198,
+   "ft": 12481,
+   "label": "Kachina Peak"
+  },
+  "dem_ft": {
+   "base": 9327,
+   "mid": 11198,
+   "summit": 12480
+  },
+  "obs": [
+   "snotel",
+   "1168:NM:SNTL",
+   "Taos Powderhorn SNOTEL",
+   11020,
+   36.58195,
+   -105.45617
+  ],
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ },
+ "redmountain": {
+  "name": "Red Mountain",
+  "country": "CA",
+  "tz": "America/Vancouver",
+  "base": {
+   "lat": 49.1005,
+   "lon": -117.8195,
+   "ft": 3888,
+   "label": "Base"
+  },
+  "mid": {
+   "lat": 49.1207,
+   "lon": -117.8455,
+   "ft": 5500,
+   "label": "Mid-mountain"
+  },
+  "summit": {
+   "lat": 49.129,
+   "lon": -117.8562,
+   "ft": 6807,
+   "label": "Granite Mountain"
+  },
+  "dem_ft": {
+   "base": 3865,
+   "mid": 5499,
+   "summit": 6722
+  },
+  "obs": null,
+  "models": [
+   "ecmwf_ifs",
+   "ecmwf_ifs025",
+   "ecmwf_aifs025_single",
+   "gfs_seamless",
+   "ncep_nbm_conus",
+   "gem_seamless",
+   "icon_seamless",
+   "jma_seamless"
+  ]
+ }
+}
